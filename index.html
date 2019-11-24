@@ -2,6 +2,22 @@
 <html>
     <head>
       <title>Giphy</title>
+      <style>
+
+        .container{
+          width: calc(200px * 4 + 3em);
+          margin: auto; 
+        }  
+
+        .results{
+          columns: 4;
+          column-gap: 1em;
+        }
+
+        .item{
+          margin-bottom: 1em;
+        }
+      </style>
     </head>
 
     <body>
@@ -48,6 +64,7 @@
               const height = obj.images.fixed_width.height
               const title = obj.title
               resultsHTML += `<img
+                  class='item'
                   src= '${url}' 
                   width = '${width}' 
                   height = '${height}'
