@@ -22,6 +22,19 @@
       <!-- Script -->
       <script>
 
+        const q = 'cats'
+        const apikey = 'ibUJBhwiC0v2pALVv5nWYTefbVleHHd9'
+        const path = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${q}`
+
+        const p = fetch(path) //Promise 1 - not the data, just the thread
+        const p2 = p.then(function(res) {
+          return res.json()  //Promise 2 - response to the first promise 
+        })
+
+        p2.then(function(json) {  //get the json data, handles the actual data
+          console.log(json)
+        })
+
       </script>
-    </body>
+    </body> 
 </html>
